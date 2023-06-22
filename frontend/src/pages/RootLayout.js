@@ -1,10 +1,17 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
+
+import MainNavigation from '../components/MainNavigation';
 
 const RootLayout = () => {
   return (
-    <React.Fragment>
-
-    </React.Fragment>
+    <>
+    <MainNavigation>
+        <main>
+          <Outlet/>
+        </main>
+      </MainNavigation>
+    </>
   );
 }
 
