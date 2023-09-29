@@ -30,7 +30,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import EditEventPage from "./pages/EditEvent";
-import EventDetailPage from "./pages/EventDetail";
+import EventDetail from "./pages/EventDetail";
 import EventsPage from "./pages/Events";
 import EventsRootLayout from "./pages/EventsRoot";
 import HomePage from "./pages/Home";
@@ -57,14 +57,14 @@ const router = createBrowserRouter([
                //..
               } else {
                 const resData = await response.json();
-                console.log(resData);
+                console.log(resData.events);
                 return resData.events;
               }
             } 
           },
-          { path: ":eventId", element: <EventDetailPage /> },
-          { path: "new", element: <NewEventPage /> },
-          { path: ":eventId/edit", element: <EditEventPage /> },
+          { path: ':eventId', element: <EventDetail /> },
+          { path: 'new', element: <NewEventPage /> },
+          { path: ':eventId/edit', element: <EditEventPage /> },
         ],
       },
     ],
